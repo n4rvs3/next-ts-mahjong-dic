@@ -1,5 +1,7 @@
 import type { NextPage } from "next"
 
+import { BiLinkAlt } from "react-icons/bi"
+
 import Link from "next/link"
 
 const About: NextPage = () => {
@@ -17,7 +19,12 @@ const About: NextPage = () => {
                                 <p>ローカル役に関しては未対応です。</p>
                                 <p>ソースコードはこちら</p>
                                 <Link href="https://github.com/n4rvs3/next-ts-mahjong-dic">
-                                        <a className=" text-teal-400">https://github.com/n4rvs3/next-ts-mahjong-dic</a>
+                                        <a target="_blank" className=" text-teal-400 flex items-center">
+                                                <span className="mr-1">
+                                                        <BiLinkAlt />
+                                                </span>
+                                                https://github.com/n4rvs3/next-ts-mahjong-dic
+                                        </a>
                                 </Link>
                                 <p>何かありましたら上記リポジトリのissueへご連絡ください。</p>
                         </div>
