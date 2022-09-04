@@ -7,7 +7,7 @@ type LayoutProps = Required<{
 }>
 
 export const Layout = ({ children }: LayoutProps) => (
-        <div className='bg-slate-200 min-h-screen'>
+        <div className='bg-slate-200'>
                 <Header />
                 <div className='my-8'>
                         {children}

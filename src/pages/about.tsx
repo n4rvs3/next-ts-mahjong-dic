@@ -14,16 +14,18 @@ const About: NextPage = () => {
                  rounded-md
                 ">
                         <h1 className="text-2xl pb-2 border-b-2 mb-5">当サイトについて</h1>
-                        <div>
+                        <div className="w-full">
                                 <p>当サイトは麻雀を遊ぶ上で鬼門となる役の形を纏めたサイトになります。</p>
                                 <p>ローカル役に関しては未対応です。</p>
                                 <p>ソースコードはこちら</p>
                                 <Link href="https://github.com/n4rvs3/next-ts-mahjong-dic">
-                                        <a target="_blank" className=" text-teal-400 flex items-center">
-                                                <span className="mr-1">
+                                        <a target="_blank" className=" text-teal-400 block md:flex items-center w-full">
+                                                <span className="mr-1 hidden md:block">
                                                         <BiLinkAlt />
                                                 </span>
-                                                https://github.com/n4rvs3/next-ts-mahjong-dic
+                                                <span className=" break-words w-full block">
+                                                        https://github.com/n4rvs3/next-ts-mahjong-dic
+                                                </span>
                                         </a>
                                 </Link>
                                 <p>何かありましたら上記リポジトリのissueへご連絡ください。</p>
