@@ -8,7 +8,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<mahjong_pai[]>
 ) {
-  /* 著者リストを取得 */
   const pai = await prisma.mahjong_pai.findMany();
   res.status(200).json(pai);
 }

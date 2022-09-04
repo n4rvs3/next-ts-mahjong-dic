@@ -1,41 +1,38 @@
 import type { NextPage, InferGetStaticPropsType } from 'next'
-// import { useEffect } from 'react'
 
 import { mahjong_pai } from "@prisma/client";
 
-// type Props = InferGetStaticPropsType<typeof getStaticProps>
+import { Card } from "../components/card/Card"
+import { ParentCard } from "../components/card/ParentCard"
 
-// const Home: NextPage<Props> = ({ pai }) => {
-const Home = () => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>
 
-  // console.log(pai)
+const Home: NextPage<Props> = ({ pai }) => {
 
   return (
-    <div >
-      <p>hello world</p>
-      {/* <div>
+    <div className=' w-11/12 mx-auto'>
+      <h1 className='text-2xl border-b-2 pb-2 mb-5'>役一覧</h1>
+      <div className='flex flex-wrap justify-between'>
         {pai.map((res => (
-          <div
-            key={res.id}
-            className=""
-          >
-            <p className='text-lg my-2'>{res.name}</p>
-          </div>
+          <ParentCard key={res.id} link={res.name_eng}>
+            <Card data={res} />
+          </ParentCard>
         )))}
-      </div> */}
+      </div>
     </div>
   )
 }
 
 export default Home
 
-// export const getStaticProps = async () => {
-//   const res = await fetch('http://localhost:3000/api/mahjong')
-//   const pai: mahjong_pai[] = await res.json()
+export const getStaticProps = async () => {
+  const url: any = process.env.api_url
+  const res = await fetch(url)
+  const pai: mahjong_pai[] = await res.json()
 
-//   return {
-//     props: {
-//       pai,
-//     },
-//   }
-// }
+  return {
+    props: {
+      pai,
+    },
+  }
+}

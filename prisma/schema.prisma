@@ -15,5 +15,6 @@ model mahjong_pai {
   name_eng    String
   is_menzen   Boolean
   count       Int
+  is_image    Boolean @default(true)
   description String
 }
