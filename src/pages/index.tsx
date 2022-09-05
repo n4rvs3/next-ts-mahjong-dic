@@ -11,7 +11,7 @@ const Home: NextPage<Props> = ({ pai }) => {
 
   return (
     <div className=' w-11/12 mx-auto'>
-      <h1 className='text-2xl border-b-4 border-b-white pb-2 mb-5'>役一覧</h1>
+      <h1 className='text-2xl bg-slate-500 text-white rounded-md py-2 mb-5 text-center'>役一覧</h1>
       <div className='flex flex-wrap justify-between'>
         {pai.map((res => (
           <ParentCard key={res.id} link={res.name_eng}>
